@@ -7,6 +7,7 @@ interface ProductCardProps {
   image: string;
   features: string[];
   priceFrom?: string;
+  hideFromPrefix?: boolean;
   isReversed?: boolean;
 }
 
@@ -16,6 +17,7 @@ export function ProductCard({
   image, 
   features, 
   priceFrom,
+  hideFromPrefix = false,
   isReversed = false 
 }: ProductCardProps) {
   const scrollToContact = () => {
@@ -60,7 +62,7 @@ export function ProductCard({
 
         {priceFrom && (
           <div className="mb-6">
-            <span className="text-sm text-muted-foreground">A partir de</span>
+            {!hideFromPrefix && <span className="text-sm text-muted-foreground">A partir de</span>}
             <div className="font-display text-3xl text-primary">{priceFrom}</div>
           </div>
         )}

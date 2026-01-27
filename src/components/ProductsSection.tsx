@@ -13,11 +13,11 @@ const products = [
     features: [
       "Tecido Poliéster Microfibra de alta durabilidade",
       "Impressão digital em alta definição",
-      "Tamanhos de 1,5x1m até 4,5x5m",
+      "Escolha o tamanho que quiser",
       "Ilhoses para fácil fixação",
       "Prazo: 10 dias úteis após aprovação"
     ],
-    priceFrom: "R$ 65,00"
+    priceFrom: "R$ 35,00"
   },
   {
     title: "CANECA DE ALUMÍNIO + TIRANTE",
@@ -41,7 +41,7 @@ const products = [
       "Estampa premium de alta definição",
       "Acabamento de alta qualidade",
       "Ideal para eventos e jogos",
-      "Personalização completa"
+      "Mínimo de 10 unidades"
     ],
     priceFrom: "R$ 17,90"
   },
@@ -67,9 +67,10 @@ const products = [
       "Acabamentos de alta qualidade",
       "Nome e número personalizados",
       "Espaço para patrocínios",
-      "Consulte modelos e medidas disponíveis"
+      "Mínimo de 10 unidades"
     ],
-    priceFrom: "Consulte"
+    priceFrom: "Consulte nossos preços",
+    hideFromPrefix: true
   }
 ];
 
