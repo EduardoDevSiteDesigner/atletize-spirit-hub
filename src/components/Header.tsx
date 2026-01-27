@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import logo from "@/assets/logo-atletize.jpg";
+import logo from "@/assets/logo-atletize-new.png";
 
 const navItems = [
   { label: "Início", href: "#hero" },
