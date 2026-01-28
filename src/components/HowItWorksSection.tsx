@@ -3,14 +3,14 @@ import { ScrollReveal } from "./ScrollReveal";
 
 const steps = [
   {
-    icon: UserPlus,
-    title: "Cadastre-se!",
-    description: "Crie uma conta ou faça login para começar seu pedido personalizado."
-  },
-  {
     icon: MessageSquare,
     title: "Fale com a Gente",
-    description: "Diga o que precisa, que faremos acontecer. Traga sua arte ou solicite um esboço, defina o material e a quantidade."
+    description: "Diga o que precisa, que faremos acontecer. Entre em contato para iniciar seu pedido personalizado."
+  },
+  {
+    icon: UserPlus,
+    title: "Traga sua Arte",
+    description: "Traga sua arte ou solicite um esboço, defina o material e a quantidade desejada."
   },
   {
     icon: CheckCircle,
