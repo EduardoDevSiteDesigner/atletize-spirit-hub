@@ -1,4 +1,5 @@
 import { UserPlus, MessageSquare, CheckCircle, Truck } from "lucide-react";
+import { ScrollReveal } from "./ScrollReveal";
 
 const steps = [
   {
@@ -28,58 +29,61 @@ export function HowItWorksSection() {
     <section id="como-funciona" className="section-padding bg-background">
       <div className="container mx-auto">
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <span className="inline-block bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-4">
-            Processo Simples
-          </span>
-          <h2 className="font-display text-4xl md:text-6xl text-foreground mb-4 tracking-wide">
-            COMO <span className="gradient-text">FUNCIONA?</span>
-          </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Em poucos passos, sua atlética terá os melhores produtos personalizados
-          </p>
-        </div>
+        <ScrollReveal>
+          <div className="text-center mb-16">
+            <span className="inline-block bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-4">
+              Processo Simples
+            </span>
+            <h2 className="font-display text-4xl md:text-6xl text-foreground mb-4 tracking-wide">
+              COMO <span className="gradient-text">FUNCIONA?</span>
+            </h2>
+            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+              Em poucos passos, sua atlética terá os melhores produtos personalizados
+            </p>
+          </div>
+        </ScrollReveal>
 
         {/* Steps */}
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {steps.map((step, index) => (
-            <div 
-              key={step.title}
-              className="relative group"
-            >
-              {/* Connector Line */}
-              {index < steps.length - 1 && (
-                <div className="hidden lg:block absolute top-12 left-1/2 w-full h-0.5 bg-gradient-to-r from-primary/50 to-primary/20" />
-              )}
-              
-              <div className="relative bg-card rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all card-hover border border-border/50">
-                {/* Step Number */}
-                <div className="absolute -top-4 -left-4 w-10 h-10 gradient-bg rounded-xl flex items-center justify-center text-white font-bold text-lg shadow-lg">
-                  {index + 1}
-                </div>
+            <ScrollReveal key={step.title} delay={index * 150} direction="up">
+              <div className="relative group">
+                {/* Connector Line */}
+                {index < steps.length - 1 && (
+                  <div className="hidden lg:block absolute top-12 left-1/2 w-full h-0.5 bg-gradient-to-r from-primary/50 to-primary/20" />
+                )}
+                
+                <div className="relative bg-card rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all card-hover border border-border/50 h-full">
+                  {/* Step Number */}
+                  <div className="absolute -top-4 -left-4 w-10 h-10 gradient-bg rounded-xl flex items-center justify-center text-white font-bold text-lg shadow-lg">
+                    {index + 1}
+                  </div>
 
-                {/* Icon */}
-                <div className="w-16 h-16 gradient-bg rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                  <step.icon className="w-8 h-8 text-white" />
-                </div>
+                  {/* Icon */}
+                  <div className="w-16 h-16 gradient-bg rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                    <step.icon className="w-8 h-8 text-white" />
+                  </div>
 
-                <h3 className="font-display text-2xl text-foreground mb-3 tracking-wide">
-                  {step.title}
-                </h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  {step.description}
-                </p>
+                  <h3 className="font-display text-2xl text-foreground mb-3 tracking-wide">
+                    {step.title}
+                  </h3>
+                  <p className="text-muted-foreground leading-relaxed">
+                    {step.description}
+                  </p>
+                </div>
               </div>
-            </div>
+            </ScrollReveal>
           ))}
         </div>
 
         {/* Note */}
-        <div className="mt-12 bg-primary/5 rounded-3xl p-6 md:p-8 border border-primary/10">
-          <p className="text-muted-foreground text-center">
-            <span className="font-semibold text-foreground">Obs:</span> Fique atento às orientações e feedback da equipe de design para garantir que a arte seja adequada para a estampagem.
-          </p>
-        </div>
+        <ScrollReveal delay={300}>
+          <div className="mt-12 bg-primary/5 rounded-3xl p-6 md:p-8 border border-primary/10">
+            <p className="text-muted-foreground text-center">
+              <span className="font-semibold text-foreground">Obs:</span> Fique atento às orientações e feedback da equipe de design para garantir que a arte seja adequada para a estampagem.
+            </p>
+          </div>
+        </ScrollReveal>
       </div>
     </section>
   );

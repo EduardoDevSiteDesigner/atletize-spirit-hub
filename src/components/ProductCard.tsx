@@ -4,7 +4,6 @@ import { Button } from "@/components/ui/button";
 interface ProductCardProps {
   title: string;
   description: string;
-  image: string;
   features: string[];
   priceFrom?: string;
   hideFromPrefix?: boolean;
@@ -14,7 +13,6 @@ interface ProductCardProps {
 export function ProductCard({ 
   title, 
   description, 
-  image, 
   features, 
   priceFrom,
   hideFromPrefix = false,
@@ -29,15 +27,14 @@ export function ProductCard({
 
   return (
     <div className={`flex flex-col ${isReversed ? 'lg:flex-row-reverse' : 'lg:flex-row'} gap-8 lg:gap-12 items-center`}>
-      {/* Image */}
+      {/* Placeholder Image */}
       <div className="flex-1 w-full">
         <div className="relative group">
-          <div className="absolute inset-0 gradient-bg rounded-3xl opacity-20 group-hover:opacity-30 transition-opacity" />
-          <img 
-            src={image} 
-            alt={title}
-            className="w-full h-64 md:h-80 lg:h-96 object-cover rounded-3xl shadow-2xl"
-          />
+          <div className="w-full h-64 md:h-80 lg:h-96 bg-primary-light rounded-3xl shadow-2xl flex items-center justify-center">
+            <span className="text-white font-display text-2xl md:text-3xl tracking-wide text-center px-4">
+              foto do produto aqui
+            </span>
+          </div>
         </div>
       </div>
 
