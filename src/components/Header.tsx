@@ -27,15 +27,12 @@ export function Header() {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <a href="#hero" className="flex items-center gap-3">
+          <a href="#hero" className="flex items-center">
             <img 
               src={logo} 
               alt="ATLETIZE" 
               className="h-10 md:h-12 w-auto rounded-lg"
             />
-            <span className="font-display text-2xl md:text-3xl text-primary tracking-wider hidden sm:block">
-              ATLETIZE
-            </span>
           </a>
 
           {/* Desktop Navigation */}
