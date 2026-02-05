@@ -5,7 +5,7 @@ const athletics = [
   { src: "/atleticas/olimpo.png", alt: "Atlética Olimpo - Direito FUNEPE" },
   { src: "/atleticas/ufpr-edfisica.png", alt: "Atlética Educação Física UFPR Litoral" },
   { src: "/atleticas/caenpro.png", alt: "CAENPRO - Engenharia de Produção UFPR" },
-  { src: "/atleticas/odontologia.jpg", alt: "Atlética AAAO UNISO Odontologia" },
+  { src: "/atleticas/odontologia.png", alt: "Atlética AAAO UNISO Odontologia" },
   { src: "/atleticas/monetaria.png", alt: "A.A.A. Monetária UFU" },
   { src: "/atleticas/cefet-rj.png", alt: "Atlética CEFET RJ Nova Iguaçu" },
   { src: "/atleticas/medicina-ufsc.png", alt: "Atlética Medicina AAAMEDU FSC" },
