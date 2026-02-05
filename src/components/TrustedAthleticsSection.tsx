@@ -10,7 +10,7 @@ const athletics = [
   { src: "/atleticas/cefet-rj.png", alt: "Atlética CEFET RJ Nova Iguaçu" },
   { src: "/atleticas/engenharia-producao.png", alt: "Atlética Engenharia de Produção UFPR" },
   { src: "/atleticas/fkb-itapetininga-new.png", alt: "Atlética FKB Itapetininga" },
-  { src: "/atleticas/caenpro.png", alt: "CAENPRO - Engenharia de Produção UFPR" },
+  { src: "/atleticas/ursao-uniamerica.png", alt: "Atlética Ursão Uniamerica" },
   { src: "/atleticas/financas-ucp.png", alt: "Atlética de Finanças UCP" },
 ];
 
