@@ -8,6 +8,8 @@ interface ProductCardProps {
   priceFrom?: string;
   hideFromPrefix?: boolean;
   isReversed?: boolean;
+  image?: string;
+  imageAlt?: string;
 }
 
 export function ProductCard({ 
@@ -16,7 +18,9 @@ export function ProductCard({
   features, 
   priceFrom,
   hideFromPrefix = false,
-  isReversed = false 
+  isReversed = false,
+  image,
+  imageAlt
 }: ProductCardProps) {
   const scrollToContact = () => {
     const element = document.querySelector("#contato");
@@ -27,13 +31,15 @@ export function ProductCard({
 
   return (
     <div className={`flex flex-col ${isReversed ? 'lg:flex-row-reverse' : 'lg:flex-row'} gap-8 lg:gap-12 items-center`}>
-      {/* Placeholder Image */}
+      {/* Product Image */}
       <div className="flex-1 w-full">
         <div className="relative group">
-          <div className="w-full h-64 md:h-80 lg:h-96 bg-primary-light rounded-3xl shadow-2xl flex items-center justify-center">
-            <span className="text-white font-display text-2xl md:text-3xl tracking-wide text-center px-4">
-              foto do produto aqui
-            </span>
+          <div className="w-full h-64 md:h-80 lg:h-96 rounded-3xl shadow-2xl overflow-hidden">
+            <img 
+              src={image} 
+              alt={imageAlt || title}
+              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+            />
           </div>
         </div>
       </div>

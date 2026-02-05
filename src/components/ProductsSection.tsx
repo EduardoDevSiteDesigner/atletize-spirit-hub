@@ -14,7 +14,8 @@ const products = [
       "Ilhoses para fácil fixação",
       "Prazo: 10 dias úteis após aprovação"
     ],
-    priceFrom: "R$ 35,00"
+    priceFrom: "R$ 35,00",
+    image: "/produtos/bandeirao.png"
   },
   {
     title: "CANECA DE ALUMÍNIO + TIRANTE",
@@ -26,7 +27,8 @@ const products = [
       "Materiais de alta qualidade",
       "Mínimo de 20 unidades"
     ],
-    priceFrom: "R$ 17,40"
+    priceFrom: "R$ 17,40",
+    image: "/produtos/caneca.png"
   },
   {
     title: "SACOCHILAS",
@@ -38,7 +40,8 @@ const products = [
       "Ideal para eventos e jogos",
       "Mínimo de 10 unidades"
     ],
-    priceFrom: "R$ 17,90"
+    priceFrom: "R$ 17,90",
+    image: "/produtos/sacochila.png"
   },
   {
     title: "CACHECÓIS E FAIXAS",
@@ -50,7 +53,8 @@ const products = [
       "Perfeito para jogos e eventos",
       "Preços especiais para grandes quantidades"
     ],
-    priceFrom: "R$ 5,00"
+    priceFrom: "R$ 5,00",
+    image: "/produtos/cachecol.png"
   },
   {
     title: "UNIFORMES PERSONALIZADOS",
@@ -63,7 +67,8 @@ const products = [
       "Mínimo de 10 unidades"
     ],
     priceFrom: "Consulte nossos preços",
-    hideFromPrefix: true
+    hideFromPrefix: true,
+    image: "/produtos/uniforme.png"
   }
 ];
 
