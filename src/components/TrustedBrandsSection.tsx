@@ -46,14 +46,14 @@ function BrandIcon({ src, alt, index }: BrandIconProps) {
       )}
       style={{ transitionDelay: `${delay}ms` }}
     >
-      <div className="relative w-24 h-24 md:w-32 md:h-32 lg:w-36 lg:h-36 rounded-full bg-white shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-110 flex items-center justify-center p-4 group">
+      <div className="relative w-24 h-24 md:w-32 md:h-32 lg:w-36 lg:h-36 rounded-full bg-white shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-110 flex items-center justify-center p-4 group overflow-hidden">
         {/* Glow effect on hover */}
         <div className="absolute inset-0 rounded-full bg-gradient-to-br from-primary/20 to-accent/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-xl" />
         
         <img
           src={src}
           alt={alt}
-          className="w-full h-full object-contain relative z-10"
+          className="w-full h-full object-contain relative z-10 transition-transform duration-300 group-hover:scale-110"
         />
       </div>
     </div>
