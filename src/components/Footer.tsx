@@ -14,6 +14,11 @@ export function Footer() {
           <p className="text-white/90 text-lg">
             Uma marca Arte Arena
           </p>
+          
+          {/* About Arte Arena */}
+          <p className="text-white/70 text-xs max-w-2xl text-center leading-relaxed mt-2">
+            A Arte Arena é sua parceira ideal na criação de materiais personalizados que refletem a identidade única de cada cliente. Desde nossa fundação, nos dedicamos a oferecer produtos de alta qualidade, combinando criatividade, inovação e um compromisso inabalável com a satisfação do cliente. Nossa missão é transformar suas ideias em realidade, proporcionando produtos que não apenas atendem, mas superam suas expectativas.
+          </p>
         </div>
 
         {/* Divider */}

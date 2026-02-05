@@ -8,11 +8,16 @@ import {
 } from "@/components/ui/carousel";
 
 const galleryImages = [
-  { src: "/galeria/bandeira-incisiva.png", alt: "Bandeira Atlética Incisiva" },
   { src: "/galeria/bandeira-insano.png", alt: "Bandeira Insano AAATI UP" },
   { src: "/galeria/bandeira-ufabc.png", alt: "Bandeira UFABC Biotecnologia" },
   { src: "/galeria/bandeira-aaaef.png", alt: "Bandeira AAAEF Educação Física" },
   { src: "/galeria/bandeira-garra.png", alt: "Bandeira Garra Amarela" },
+  { src: "/galeria/bandeira-soberano.png", alt: "Bandeira Soberano AAAFAC" },
+  { src: "/galeria/bandeira-severa.png", alt: "Bandeira Severa Medicina Guarulhos" },
+  { src: "/galeria/bandeira-tritoes.png", alt: "Bandeira Tritões AAAEFU" },
+  { src: "/galeria/bandeira-magistral.png", alt: "Bandeira Magistral UFBA" },
+  { src: "/galeria/bandeira-viboras.png", alt: "Bandeira Víboras Enfermagem" },
+  { src: "/galeria/bandeira-ousadamed.png", alt: "Bandeira Ousadamed Medicina UNIAG" },
 ];
 
 export function GallerySection() {

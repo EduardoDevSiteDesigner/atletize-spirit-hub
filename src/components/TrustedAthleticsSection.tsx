@@ -4,13 +4,13 @@ import { cn } from "@/lib/utils";
 const athletics = [
   { src: "/atleticas/olimpo.png", alt: "Atlética Olimpo - Direito FUNEPE" },
   { src: "/atleticas/ufpr-edfisica.png", alt: "Atlética Educação Física UFPR Litoral" },
-  { src: "/atleticas/caenpro.png", alt: "CAENPRO - Engenharia de Produção UFPR" },
+  { src: "/atleticas/fisioterapia-fmabc-new.png", alt: "A.A. Atlética Fisioterapia FMABC" },
   { src: "/atleticas/odontologia.png", alt: "Atlética AAAO UNISO Odontologia" },
   { src: "/atleticas/monetaria.png", alt: "A.A.A. Monetária UFU" },
   { src: "/atleticas/cefet-rj.png", alt: "Atlética CEFET RJ Nova Iguaçu" },
-  { src: "/atleticas/medicina-ufsc.png", alt: "Atlética Medicina AAAMEDU FSC" },
-  { src: "/atleticas/fisioterapia-fmabc.png", alt: "A.A. Atlética Fisioterapia FMABC" },
-  { src: "/atleticas/fkb-itapetininga.png", alt: "Atlética FKB Itapetininga" },
+  { src: "/atleticas/engenharia-producao.png", alt: "Atlética Engenharia de Produção UFPR" },
+  { src: "/atleticas/fkb-itapetininga-new.png", alt: "Atlética FKB Itapetininga" },
+  { src: "/atleticas/caenpro.png", alt: "CAENPRO - Engenharia de Produção UFPR" },
   { src: "/atleticas/financas-ucp.png", alt: "Atlética de Finanças UCP" },
 ];
 

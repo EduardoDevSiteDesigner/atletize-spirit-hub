@@ -89,18 +89,6 @@ export function ContactSection() {
             </div>
           </ScrollReveal>
 
-          {/* About Arte Arena */}
-          <ScrollReveal delay={200}>
-            <div className="bg-card rounded-3xl p-8 shadow-lg border border-border/50">
-              <h4 className="font-display text-xl text-foreground mb-4 tracking-wide text-center">
-                Sobre a Arte Arena
-              </h4>
-              <p className="text-muted-foreground text-sm leading-relaxed text-center">
-                A Arte Arena é sua parceira ideal na criação de materiais personalizados que refletem a identidade única de cada cliente. Desde nossa fundação, nos dedicamos a oferecer produtos de alta qualidade, combinando criatividade, inovação e um compromisso inabalável com a satisfação do cliente. Nossa missão é transformar suas ideias em realidade, proporcionando produtos que não apenas atendem, mas superam suas expectativas.
-              </p>
-            </div>
-          </ScrollReveal>
-
           {/* Social Media */}
           <ScrollReveal delay={300}>
             <div className="bg-primary/5 rounded-3xl p-8 border border-primary/10 text-center mt-8">
