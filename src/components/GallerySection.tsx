@@ -8,13 +8,11 @@ import {
 } from "@/components/ui/carousel";
 
 const galleryImages = [
-  { src: "/galeria/bandeirao-pantera.png", alt: "Bandeirão Direito Pantera Roxa" },
-  { src: "/galeria/mosaico-onca.heic", alt: "Mosaico Onça Pintada" },
-  { src: "/galeria/faixa-capitao.heic", alt: "Faixa de Capitão Eagle" },
-  { src: "/galeria/cachecol-med.heic", alt: "Cachecol Med Alfenas" },
-  { src: "/galeria/sacochila-ursao.heic", alt: "Sacochila Ursão" },
-  { src: "/galeria/bandeira-leao.heic", alt: "Bandeira Leão AAEEF" },
-  { src: "/galeria/bandeira-raposa.heic", alt: "Bandeira Atlética Insano Raposa" },
+  { src: "/galeria/bandeira-incisiva.png", alt: "Bandeira Atlética Incisiva" },
+  { src: "/galeria/bandeira-insano.png", alt: "Bandeira Insano AAATI UP" },
+  { src: "/galeria/bandeira-ufabc.png", alt: "Bandeira UFABC Biotecnologia" },
+  { src: "/galeria/bandeira-aaaef.png", alt: "Bandeira AAAEF Educação Física" },
+  { src: "/galeria/bandeira-garra.png", alt: "Bandeira Garra Amarela" },
 ];
 
 export function GallerySection() {
