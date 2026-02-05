@@ -66,14 +66,13 @@ export function AboutArteArenaSection() {
               {groupBrands.map((brand) => (
                 <div 
                   key={brand.name}
-                  className="bg-card rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow flex flex-col items-center justify-center"
+                  className="bg-card rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow flex items-center justify-center"
                 >
                   <img 
                     src={brand.logo} 
                     alt={brand.name}
-                    className="w-full h-24 object-contain mb-4"
+                    className="w-full h-24 object-contain"
                   />
-                  <span className="text-sm font-medium text-foreground text-center">{brand.name}</span>
                 </div>
               ))}
             </div>
