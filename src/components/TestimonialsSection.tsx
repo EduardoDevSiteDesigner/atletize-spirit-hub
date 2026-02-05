@@ -1,24 +1,30 @@
 import { Star, Quote } from "lucide-react";
 import { ScrollReveal } from "./ScrollReveal";
+import testimonialWoman from "@/assets/testimonial-woman.jpg";
+import testimonialCouple from "@/assets/testimonial-couple.jpg";
+import testimonialManDog from "@/assets/testimonial-man-dog.jpg";
 
 const testimonials = [
   {
     name: "Thay Silva",
-    role: "Aluno",
+    role: "Aluna",
     text: "Nosso bandeirão ainda está em produção, mas já conhecemos o trabalho impecável de vocês, por isso indicamos para todas as atléticas da faculdade. Equipe atenciosa, rápida nas respostas e com muita qualidade no que fazem. Super confiamos e recomendamos!",
-    rating: 5
+    rating: 5,
+    image: testimonialWoman
   },
   {
     name: "Matheus Henrique",
     role: "Aluno",
     text: "A bandeira que encomendamos chegou perfeita. Alta qualidade, tecido resistente, e as cores estão incríveis. Ficou muito melhor do que a gente tava esperando. Recomendo sem pensar duas vezes",
-    rating: 5
+    rating: 5,
+    image: testimonialCouple
   },
   {
     name: "Pedro Fossatti",
     role: "Aluno",
     text: "Ótima empresa! Recomendo a Arte Bandeira pela qualidade no atendimento até a finalização do produto. As cores ficaram exatamente as indicadas e a do projeto! Muito incrível!",
-    rating: 5
+    rating: 5,
+    image: testimonialManDog
   }
 ];
 
@@ -64,9 +70,16 @@ export function TestimonialsSection() {
                 </p>
 
                 {/* Author */}
-                <div className="border-t border-border pt-4">
-                  <div className="font-semibold text-foreground">{testimonial.name}</div>
-                  <div className="text-sm text-muted-foreground">{testimonial.role}</div>
+                <div className="border-t border-border pt-4 flex items-center gap-3">
+                  <img 
+                    src={testimonial.image} 
+                    alt={testimonial.name}
+                    className="w-10 h-10 rounded-full object-cover"
+                  />
+                  <div>
+                    <div className="font-semibold text-foreground">{testimonial.name}</div>
+                    <div className="text-sm text-muted-foreground">{testimonial.role}</div>
+                  </div>
                 </div>
               </div>
             </ScrollReveal>
