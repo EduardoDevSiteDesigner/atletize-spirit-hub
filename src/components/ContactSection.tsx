@@ -1,5 +1,19 @@
-import { Phone, Mail, MapPin, Instagram, Facebook } from "lucide-react";
+import { Phone, Mail, MapPin, Instagram, Facebook, Youtube, Linkedin } from "lucide-react";
 import { ScrollReveal } from "./ScrollReveal";
+
+// Custom TikTok Icon (not in Lucide)
+const TikTokIcon = () => (
+  <svg className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 005 20.1a6.34 6.34 0 0010.86-4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1-.1z"/>
+  </svg>
+);
+
+// Custom X (Twitter) Icon
+const XIcon = () => (
+  <svg className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+  </svg>
+);
 
 export function ContactSection() {
   return (
@@ -75,18 +89,31 @@ export function ContactSection() {
             </div>
           </ScrollReveal>
 
-          {/* Social Media */}
+          {/* About Arte Arena */}
           <ScrollReveal delay={200}>
-            <div className="bg-primary/5 rounded-3xl p-8 border border-primary/10 text-center">
+            <div className="bg-card rounded-3xl p-8 shadow-lg border border-border/50">
+              <h4 className="font-display text-xl text-foreground mb-4 tracking-wide text-center">
+                Sobre a Arte Arena
+              </h4>
+              <p className="text-muted-foreground text-sm leading-relaxed text-center">
+                A Arte Arena é sua parceira ideal na criação de materiais personalizados que refletem a identidade única de cada cliente. Desde nossa fundação, nos dedicamos a oferecer produtos de alta qualidade, combinando criatividade, inovação e um compromisso inabalável com a satisfação do cliente. Nossa missão é transformar suas ideias em realidade, proporcionando produtos que não apenas atendem, mas superam suas expectativas.
+              </p>
+            </div>
+          </ScrollReveal>
+
+          {/* Social Media */}
+          <ScrollReveal delay={300}>
+            <div className="bg-primary/5 rounded-3xl p-8 border border-primary/10 text-center mt-8">
               <h4 className="font-display text-xl text-foreground mb-4 tracking-wide">
                 Siga-nos nas redes sociais!
               </h4>
-              <div className="flex justify-center gap-4">
+              <div className="flex justify-center gap-4 flex-wrap">
                 <a 
                   href="https://www.instagram.com/arte_arena/" 
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-12 h-12 gradient-bg rounded-xl flex items-center justify-center hover:opacity-80 transition-opacity"
+                  aria-label="Instagram"
                 >
                   <Instagram className="w-6 h-6 text-white" />
                 </a>
@@ -95,15 +122,52 @@ export function ContactSection() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-12 h-12 gradient-bg rounded-xl flex items-center justify-center hover:opacity-80 transition-opacity"
+                  aria-label="Facebook"
                 >
                   <Facebook className="w-6 h-6 text-white" />
+                </a>
+                <a 
+                  href="https://www.youtube.com/@artearena" 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-12 h-12 gradient-bg rounded-xl flex items-center justify-center hover:opacity-80 transition-opacity"
+                  aria-label="YouTube"
+                >
+                  <Youtube className="w-6 h-6 text-white" />
+                </a>
+                <a 
+                  href="https://www.tiktok.com/@artearena" 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-12 h-12 gradient-bg rounded-xl flex items-center justify-center hover:opacity-80 transition-opacity"
+                  aria-label="TikTok"
+                >
+                  <TikTokIcon />
+                </a>
+                <a 
+                  href="https://x.com/artearena" 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-12 h-12 gradient-bg rounded-xl flex items-center justify-center hover:opacity-80 transition-opacity"
+                  aria-label="X (Twitter)"
+                >
+                  <XIcon />
+                </a>
+                <a 
+                  href="https://www.linkedin.com/company/artearena" 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-12 h-12 gradient-bg rounded-xl flex items-center justify-center hover:opacity-80 transition-opacity"
+                  aria-label="LinkedIn"
+                >
+                  <Linkedin className="w-6 h-6 text-white" />
                 </a>
               </div>
             </div>
           </ScrollReveal>
 
           {/* Hours */}
-          <ScrollReveal delay={300}>
+          <ScrollReveal delay={400}>
             <div className="bg-card rounded-3xl p-8 shadow-lg border border-border/50 mt-8">
               <h4 className="font-display text-xl text-foreground mb-4 tracking-wide text-center">
                 Horários de Atendimento
