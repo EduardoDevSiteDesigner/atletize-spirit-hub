@@ -1,6 +1,8 @@
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
+const WHATSAPP_NUMBER = "5511934881548";
+
 interface ProductCardProps {
   title: string;
   description: string;
@@ -22,11 +24,9 @@ export function ProductCard({
   image,
   imageAlt
 }: ProductCardProps) {
-  const scrollToContact = () => {
-    const element = document.querySelector("#contato");
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
+  const openWhatsAppPedido = () => {
+    const message = encodeURIComponent(`Olá! Tenho interesse em ${title}. Gostaria de mais informações e fazer um orçamento.`);
+    window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${message}`, "_blank");
   };
 
   return (
@@ -71,7 +71,7 @@ export function ProductCard({
         )}
 
         <Button 
-          onClick={scrollToContact}
+          onClick={openWhatsAppPedido}
           className="gradient-bg text-primary-foreground font-semibold px-6 py-3 rounded-2xl hover:opacity-90 transition-all group"
         >
           Fazer Pedido

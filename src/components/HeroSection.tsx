@@ -1,5 +1,7 @@
 import { Button } from "@/components/ui/button";
 
+const WHATSAPP_NUMBER = "5511934881548";
+
 export function HeroSection() {
   const scrollToProducts = () => {
     const element = document.querySelector("#produtos");
@@ -8,11 +10,9 @@ export function HeroSection() {
     }
   };
 
-  const scrollToContact = () => {
-    const element = document.querySelector("#contato");
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
+  const openWhatsAppOrcamento = () => {
+    const message = encodeURIComponent("Olá! Gostaria de fazer um orçamento para produtos personalizados da minha atlética. Podem me ajudar?");
+    window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${message}`, "_blank");
   };
 
   return (
@@ -50,7 +50,7 @@ export function HeroSection() {
               Ver Produtos
             </Button>
             <Button 
-              onClick={scrollToContact}
+              onClick={openWhatsAppOrcamento}
               className="bg-primary-light border-2 border-white text-white hover:bg-primary-light/80 font-bold px-8 py-6 text-lg rounded-2xl transition-all"
             >
               Fazer Orçamento

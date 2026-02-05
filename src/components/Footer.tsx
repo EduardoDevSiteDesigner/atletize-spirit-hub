@@ -1,4 +1,4 @@
-import logoWhite from "@/assets/logo-atletize-white.png";
+import logoFooter from "@/assets/logo-atletize-footer.png";
 
 export function Footer() {
   return (
@@ -7,7 +7,7 @@ export function Footer() {
         <div className="flex flex-col items-center justify-center gap-4">
           {/* Logo */}
           <img 
-            src={logoWhite} 
+            src={logoFooter} 
             alt="ATLETIZE" 
             className="h-16 w-auto"
           />
