@@ -12,12 +12,11 @@ const brands = [
   { src: "/marcas/adidas.png", alt: "Adidas" },
   { src: "/marcas/petrobras.png", alt: "Petrobras" },
   { src: "/marcas/amazon.png", alt: "Amazon" },
-  // Placeholders para as próximas 5 marcas
-  { src: "", alt: "Marca 11" },
-  { src: "", alt: "Marca 12" },
-  { src: "", alt: "Marca 13" },
-  { src: "", alt: "Marca 14" },
-  { src: "", alt: "Marca 15" },
+  { src: "/marcas/tommy.png", alt: "Tommy Hilfiger" },
+  { src: "/marcas/mcdonalds.png", alt: "McDonald's" },
+  { src: "/marcas/santos.png", alt: "Santos FC" },
+  { src: "/marcas/eudora.png", alt: "Eudora" },
+  { src: "/marcas/f1.png", alt: "Formula 1" },
 ];
 
 interface BrandIconProps {
@@ -63,9 +62,6 @@ function BrandIcon({ src, alt, index }: BrandIconProps) {
 
 export function TrustedBrandsSection() {
   const { ref: headerRef, isVisible: headerVisible } = useScrollAnimation(0.1);
-  
-  // Filtra apenas marcas com imagem
-  const activeBrands = brands.filter(brand => brand.src);
 
   return (
     <section id="marcas" className="section-padding bg-secondary/30">
@@ -93,7 +89,7 @@ export function TrustedBrandsSection() {
 
         {/* Brands Grid - 5 columns, 3 rows */}
         <div className="grid grid-cols-3 md:grid-cols-5 gap-6 md:gap-8 lg:gap-12 justify-items-center max-w-5xl mx-auto">
-          {activeBrands.map((brand, index) => (
+          {brands.map((brand, index) => (
             <BrandIcon 
               key={index} 
               src={brand.src} 
