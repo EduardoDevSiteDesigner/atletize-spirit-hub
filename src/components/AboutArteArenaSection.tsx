@@ -1,5 +1,14 @@
 import { ScrollReveal } from "./ScrollReveal";
 import logoArteArena from "@/assets/logo-artearena.jpg";
+import logoBandeiraPersonalizada from "@/assets/logo-bandeira-personalizada.png";
+import logoTotemSports from "@/assets/logo-totem-sports.jpg";
+import logoLojaTorcida from "@/assets/logo-loja-torcida.jpg";
+
+const groupBrands = [
+  { name: "BANDEIRA PERSONALIZADA", logo: logoBandeiraPersonalizada },
+  { name: "TOTEM SPORTS", logo: logoTotemSports },
+  { name: "LOJA DE TORCIDA", logo: logoLojaTorcida },
+];
 
 export function AboutArteArenaSection() {
   return (
@@ -43,6 +52,30 @@ export function AboutArteArenaSection() {
                 alt="Arte Arena" 
                 className="w-48 md:w-64 lg:w-72 h-auto"
               />
+            </div>
+          </div>
+        </ScrollReveal>
+
+        {/* Grupo Arte Arena */}
+        <ScrollReveal delay={200}>
+          <div className="mt-16">
+            <h3 className="font-display text-3xl md:text-4xl text-foreground mb-8 tracking-wide text-center">
+              GRUPO <span className="gradient-text">ARTE ARENA</span>
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+              {groupBrands.map((brand) => (
+                <div 
+                  key={brand.name}
+                  className="bg-card rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow flex flex-col items-center justify-center"
+                >
+                  <img 
+                    src={brand.logo} 
+                    alt={brand.name}
+                    className="w-full h-24 object-contain mb-4"
+                  />
+                  <span className="text-sm font-medium text-foreground text-center">{brand.name}</span>
+                </div>
+              ))}
             </div>
           </div>
         </ScrollReveal>
