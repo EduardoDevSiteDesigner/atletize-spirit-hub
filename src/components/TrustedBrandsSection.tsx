@@ -2,8 +2,8 @@ import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 import { cn } from "@/lib/utils";
 
 const brands = [
-  { src: "/marcas/palmeiras.png", alt: "Palmeiras" },
   { src: "/marcas/saopaulo.png", alt: "São Paulo FC" },
+  { src: "/marcas/palmeiras.png", alt: "Palmeiras" },
   { src: "/marcas/nubank.png", alt: "Nubank" },
   { src: "/marcas/heineken.png", alt: "Heineken" },
   { src: "/marcas/corinthians.png", alt: "Corinthians" },

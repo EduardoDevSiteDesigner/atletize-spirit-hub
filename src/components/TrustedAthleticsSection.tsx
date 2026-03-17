@@ -40,7 +40,7 @@ function AthleticIcon({ src, alt, index }: AthleticIconProps) {
       )}
       style={{ transitionDelay: `${delay}ms` }}
     >
-      <div className="relative w-24 h-24 md:w-28 md:h-28 lg:w-32 lg:h-32 rounded-full bg-white shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-110 flex items-center justify-center p-3 group overflow-hidden">
+      <div className="relative w-32 h-32 md:w-40 md:h-40 lg:w-44 lg:h-44 rounded-full bg-white shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-110 flex items-center justify-center p-4 group overflow-hidden">
         <img
           src={src}
           alt={alt}

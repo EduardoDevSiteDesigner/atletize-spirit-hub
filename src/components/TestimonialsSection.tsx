@@ -25,6 +25,27 @@ const testimonials = [
     text: "Ótima empresa! Recomendo a Arte Bandeira pela qualidade no atendimento até a finalização do produto. As cores ficaram exatamente as indicadas e a do projeto! Muito incrível!",
     rating: 5,
     image: testimonialManDog
+  },
+  {
+    name: "Lucas Martins",
+    role: "Diretor de Marketing - Atlética",
+    text: "Pedimos o kit com caneca e tirante personalizados para o nosso trote de boas-vindas. A qualidade surpreendeu todo mundo! As cores ficaram vivas e o acabamento é impecável. Já estamos planejando o próximo pedido.",
+    rating: 5,
+    image: testimonialCouple
+  },
+  {
+    name: "Carolina Souza",
+    role: "Presidente - Atlética",
+    text: "Encomendamos um bandeirão de 5x5 metros e ficou absolutamente perfeito! As cores vibrantes, o tecido resistente e o tamanho impressionante fizeram toda a diferença nos jogos. A torcida inteira ficou orgulhosa. Nota 10!",
+    rating: 5,
+    image: testimonialWoman
+  },
+  {
+    name: "Rafael Oliveira",
+    role: "Tesoureiro - Atlética",
+    text: "Fechamos um kit completo com sacochila, toalha, caneca e bandeira. Tudo seguindo as mesmas cores da atlética, ficou super harmonizado e profissional. O custo-benefício valeu muito a pena, a galera amou e esgotou em dois dias!",
+    rating: 5,
+    image: testimonialManDog
   }
 ];
 
