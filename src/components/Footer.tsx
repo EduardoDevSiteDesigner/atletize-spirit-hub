@@ -11,7 +11,7 @@ export function Footer() {
   return (
     <footer className="gradient-bg py-12">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+        <div className="flex flex-col md:flex-row gap-12 items-start">
           {/* Left - Logo, Description & Nav Links */}
           <div className="flex flex-col items-center md:items-start gap-4">
             <img 
