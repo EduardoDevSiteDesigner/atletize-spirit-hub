@@ -21,11 +21,25 @@ const products = [
   { id: "almofada", label: "Almofada" },
 ];
 
+const categories = [
+  { id: "atletica", label: "Atlética Universitária" },
+  { id: "terceirao", label: "Terceirão" },
+  { id: "interclasse", label: "Interclasse" },
+  { id: "outros", label: "Outros" },
+];
+
+const categoryMessages: Record<string, string> = {
+  atletica: "🎓 Tipo de pedido: Atlética Universitária",
+  terceirao: "🎒 Tipo de pedido: Terceirão",
+  interclasse: "🏅 Tipo de pedido: Interclasse",
+};
+
 export function QuoteSection() {
   const [step, setStep] = useState(1);
   const [selectedProducts, setSelectedProducts] = useState<string[]>([]);
   const [quantities, setQuantities] = useState<Record<string, number>>({});
   const [cep, setCep] = useState("");
+  const [category, setCategory] = useState("");
 
   const toggleProduct = (id: string) => {
     setSelectedProducts((prev) =>
@@ -58,16 +72,20 @@ export function QuoteSection() {
         return `• ${product?.label} — Qtd: ${qty}`;
       })
       .join("\n");
+
+    const categoryLine = categoryMessages[category]
+      ? `\n${categoryMessages[category]}\n`
+      : "";
+
     const message = encodeURIComponent(
       `Olá! Gostaria de um orçamento para os seguintes produtos:\n\n` +
       `${productLines}\n\n` +
-      `📍 CEP: ${cep}\n\n` +
+      `📍 CEP: ${cep}\n` +
+      `${categoryLine}\n` +
       `Podem me ajudar?`
     );
     window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${message}`, "_blank");
   };
-
-  const totalSteps = 3;
 
   return (
     <section id="orcamento" className="section-padding bg-background">
@@ -89,12 +107,12 @@ export function QuoteSection() {
         {/* Progress */}
         <ScrollReveal delay={100}>
           <div className="flex items-center justify-center gap-4 mb-10">
-            {[1, 2, 3].map((s, i) => (
+            {[1, 2, 3, 4].map((s, i) => (
               <div key={s} className="flex items-center gap-4">
                 <div className={`flex items-center justify-center w-10 h-10 rounded-full font-display text-lg transition-colors ${step >= s ? "bg-primary text-primary-foreground" : "bg-muted text-muted-foreground"}`}>
                   {step > s ? <Check className="w-5 h-5" /> : s}
                 </div>
-                {i < 2 && (
+                {i < 3 && (
                   <div className={`h-1 w-12 rounded-full transition-colors ${step > s ? "bg-primary" : "bg-muted"}`} />
                 )}
               </div>
@@ -259,8 +277,63 @@ export function QuoteSection() {
                     Voltar
                   </Button>
                   <Button
-                    onClick={sendWhatsApp}
+                    onClick={() => setStep(4)}
                     disabled={cep.replace(/\D/g, "").length < 8}
+                    className="gradient-bg text-primary-foreground font-semibold px-6 py-3 rounded-2xl hover:opacity-90 transition-all group"
+                  >
+                    Próximo
+                    <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                  </Button>
+                </div>
+              </div>
+            )}
+
+            {/* Step 4: Category */}
+            {step === 4 && (
+              <div>
+                <h3 className="font-display text-2xl text-foreground mb-2 tracking-wide">
+                  TIPO DE PEDIDO
+                </h3>
+                <p className="text-muted-foreground text-sm mb-6">
+                  Selecione a categoria do seu pedido.
+                </p>
+
+                <div className="grid grid-cols-2 gap-4 mb-8">
+                  {categories.map((cat) => {
+                    const isSelected = category === cat.id;
+                    return (
+                      <button
+                        key={cat.id}
+                        onClick={() => setCategory(cat.id)}
+                        className={`flex items-center justify-center min-h-[72px] px-4 py-5 rounded-2xl border-2 transition-all text-center relative
+                          ${isSelected
+                            ? "border-primary bg-primary/10 shadow-md scale-[1.02]"
+                            : "border-border bg-secondary/30 hover:border-primary/50 hover:bg-secondary/60"
+                          }`}
+                      >
+                        <span className={`font-semibold text-base text-center leading-tight ${isSelected ? "text-primary" : "text-foreground"}`}>
+                          {cat.label}
+                        </span>
+                        {isSelected && (
+                          <Check className="w-4 h-4 text-primary absolute top-2 right-2" />
+                        )}
+                      </button>
+                    );
+                  })}
+                </div>
+
+                <div className="flex justify-between">
+                  <Button
+                    variant="outline"
+                    onClick={() => setStep(3)}
+                    className="font-semibold px-6 py-3 rounded-2xl"
+                  >
+                    <ArrowLeft className="w-4 h-4 mr-2" />
+                    Voltar
+                  </Button>
+                  <Button
+                    onClick={sendWhatsApp}
+                    disabled={!category}
                     className="gradient-bg text-primary-foreground font-semibold px-6 py-3 rounded-2xl hover:opacity-90 transition-all group"
                   >
                     Enviar pelo WhatsApp
