@@ -126,7 +126,7 @@ export function QuoteSection() {
                             : "border-border bg-secondary/30 hover:border-primary/50 hover:bg-secondary/60"
                           }`}
                       >
-                        <span className={`font-medium text-sm ${isSelected ? "text-primary" : "text-foreground"}`}>
+                        <span className={`font-medium text-sm text-center ${isSelected ? "text-primary" : "text-foreground"}`}>
                           {product.label}
                         </span>
                         {isSelected && (
