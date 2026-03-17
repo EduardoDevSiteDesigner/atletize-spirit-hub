@@ -4,7 +4,17 @@ import testimonialWoman from "@/assets/testimonial-woman.jpg";
 import testimonialCouple from "@/assets/testimonial-couple.jpg";
 import testimonialManDog from "@/assets/testimonial-man-dog.jpg";
 
-const testimonials = [
+type Testimonial = {
+  name: string;
+  role: string;
+  text: string;
+  rating: number;
+  image?: string;
+  initial?: string;
+  logo?: string;
+};
+
+const testimonials: Testimonial[] = [
   {
     name: "Thay Silva",
     role: "Aluna",
@@ -31,21 +41,21 @@ const testimonials = [
     role: "Diretor de Marketing - Atlética",
     text: "Pedimos o kit com caneca e tirante personalizados para o nosso trote de boas-vindas. A qualidade surpreendeu todo mundo! As cores ficaram vivas e o acabamento é impecável. Já estamos planejando o próximo pedido.",
     rating: 5,
-    image: testimonialCouple
+    initial: "L"
   },
   {
     name: "Carolina Souza",
     role: "Presidente - Atlética",
     text: "Encomendamos um bandeirão de 5x5 metros e ficou absolutamente perfeito! As cores vibrantes, o tecido resistente e o tamanho impressionante fizeram toda a diferença nos jogos. A torcida inteira ficou orgulhosa. Nota 10!",
     rating: 5,
-    image: testimonialWoman
+    logo: "/atleticas/olimpo.png"
   },
   {
     name: "Rafael Oliveira",
     role: "Tesoureiro - Atlética",
     text: "Fechamos um kit completo com sacochila, toalha, caneca e bandeira. Tudo seguindo as mesmas cores da atlética, ficou super harmonizado e profissional. O custo-benefício valeu muito a pena, a galera amou e esgotou em dois dias!",
     rating: 5,
-    image: testimonialManDog
+    initial: "R"
   }
 ];
 
