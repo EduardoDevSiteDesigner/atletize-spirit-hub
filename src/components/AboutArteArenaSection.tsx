@@ -5,9 +5,9 @@ import logoTotemSports from "@/assets/logo-totem-sports.jpg";
 import logoLojaTorcida from "@/assets/logo-loja-torcida.jpg";
 
 const groupBrands = [
-  { name: "BANDEIRA PERSONALIZADA", logo: logoBandeiraPersonalizada },
-  { name: "TOTEM SPORTS", logo: logoTotemSports },
-  { name: "LOJA DE TORCIDA", logo: logoLojaTorcida },
+  { name: "BANDEIRA PERSONALIZADA", logo: logoBandeiraPersonalizada, url: "https://bandeirapersonalizada.com.br" },
+  { name: "TOTEM SPORTS", logo: logoTotemSports, url: "https://www.totemsports.com.br" },
+  { name: "LOJA DE TORCIDA", logo: logoLojaTorcida, url: "https://www.lojadetorcida.com.br" },
 ];
 
 export function AboutArteArenaSection() {
