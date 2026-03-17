@@ -5,21 +5,21 @@ export function HeroSection() {
   return (
     <section id="hero" className="pt-16">
       {/* Desktop */}
-      <div className="hidden md:block w-full">
+      <a href="#orcamento" className="hidden md:block w-full cursor-pointer">
         <img
           src={heroDesktop}
           alt="Atletize - Produtos personalizados para atléticas"
           className="w-full h-auto"
         />
-      </div>
+      </a>
       {/* Mobile */}
-      <div className="block md:hidden w-full">
+      <a href="#orcamento" className="block md:hidden w-full cursor-pointer">
         <img
           src={heroMobile}
           alt="Atletize - Produtos personalizados para atléticas"
           className="w-full h-auto"
         />
-      </div>
+      </a>
     </section>
   );
 }
