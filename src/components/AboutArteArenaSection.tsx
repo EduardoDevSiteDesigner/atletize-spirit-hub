@@ -72,6 +72,7 @@ export function AboutArteArenaSection() {
                   <img 
                     src={brand.logo} 
                     alt={brand.name}
+                    loading="lazy"
                     className="w-full h-24 object-contain"
                   />
                 </div>

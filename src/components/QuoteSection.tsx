@@ -199,9 +199,12 @@ export function QuoteSection() {
                           </button>
                           <Input
                             type="number"
-                            min={1}
+                            min={getMinQty(id)}
                             value={qty}
-                            onChange={(e) => setQuantity(id, parseInt(e.target.value) || 1)}
+                            onChange={(e) => {
+                              const val = parseInt(e.target.value) || getMinQty(id);
+                              setQuantity(id, Math.max(val, getMinQty(id)));
+                            }}
                             className="w-16 text-center p-1 rounded-xl [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
                           />
                           <button
@@ -211,6 +214,11 @@ export function QuoteSection() {
                             <Plus className="w-4 h-4" />
                           </button>
                         </div>
+                        {getMinQty(id) > 1 && (
+                          <span className="text-xs text-muted-foreground mt-1">
+                            Mín: {getMinQty(id)} un.
+                          </span>
+                        )}
                       </div>
                     );
                   })}
