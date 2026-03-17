@@ -47,10 +47,12 @@ export function QuoteSection() {
     );
   };
 
-  const getQuantity = (id: string) => quantities[id] || 1;
+  const getMinQty = (id: string) => products.find((p) => p.id === id)?.minQty || 1;
+  const getQuantity = (id: string) => quantities[id] || getMinQty(id);
 
   const setQuantity = (id: string, value: number) => {
-    if (value < 1) return;
+    const min = getMinQty(id);
+    if (value < min) return;
     setQuantities((prev) => ({ ...prev, [id]: value }));
   };
 
