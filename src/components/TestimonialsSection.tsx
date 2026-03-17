@@ -102,11 +102,23 @@ export function TestimonialsSection() {
 
                 {/* Author */}
                 <div className="border-t border-border pt-4 flex items-center gap-3">
-                  <img 
-                    src={testimonial.image} 
-                    alt={testimonial.name}
-                    className="w-10 h-10 rounded-full object-cover"
-                  />
+                  {testimonial.image ? (
+                    <img 
+                      src={testimonial.image} 
+                      alt={testimonial.name}
+                      className="w-10 h-10 rounded-full object-cover"
+                    />
+                  ) : testimonial.logo ? (
+                    <img 
+                      src={testimonial.logo} 
+                      alt={testimonial.name}
+                      className="w-10 h-10 rounded-full object-contain bg-muted p-1"
+                    />
+                  ) : (
+                    <div className="w-10 h-10 rounded-full gradient-bg flex items-center justify-center text-white font-bold text-lg">
+                      {testimonial.initial}
+                    </div>
+                  )}
                   <div>
                     <div className="font-semibold text-foreground">{testimonial.name}</div>
                     <div className="text-sm text-muted-foreground">{testimonial.role}</div>
