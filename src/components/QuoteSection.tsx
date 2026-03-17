@@ -2,29 +2,42 @@ import { useState } from "react";
 import { ScrollReveal } from "./ScrollReveal";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { ArrowRight, ArrowLeft, Send, Check } from "lucide-react";
+import { ArrowRight, ArrowLeft, Send, Check, Minus, Plus } from "lucide-react";
 
 const WHATSAPP_NUMBER = "5511934881548";
 
 const products = [
-  { id: "bandeira", label: "Bandeira", emoji: "🏳️" },
-  { id: "caneca", label: "Caneca de Alumínio", emoji: "☕" },
-  { id: "tirante", label: "Tirante", emoji: "🎗️" },
-  { id: "sacochila", label: "Sacochilas", emoji: "🎒" },
-  { id: "cachecol", label: "Cachecol", emoji: "🧣" },
-  { id: "faixa", label: "Faixas de Mão", emoji: "✊" },
-  { id: "uniforme", label: "Uniforme", emoji: "👕" },
+  { id: "bandeira", label: "Bandeira" },
+  { id: "caneca", label: "Caneca de Alumínio" },
+  { id: "tirante", label: "Tirante" },
+  { id: "sacochila", label: "Sacochilas" },
+  { id: "cachecol", label: "Cachecol" },
+  { id: "faixa", label: "Faixas de Mão" },
+  { id: "uniforme", label: "Uniforme" },
+  { id: "shorts-doll", label: "Shorts Doll" },
+  { id: "flamula", label: "Flâmula" },
+  { id: "estandarte", label: "Estandarte" },
+  { id: "backdrop", label: "Backdrop" },
+  { id: "almofada", label: "Almofada" },
 ];
 
 export function QuoteSection() {
   const [step, setStep] = useState(1);
   const [selectedProducts, setSelectedProducts] = useState<string[]>([]);
+  const [quantities, setQuantities] = useState<Record<string, number>>({});
   const [cep, setCep] = useState("");
 
   const toggleProduct = (id: string) => {
     setSelectedProducts((prev) =>
       prev.includes(id) ? prev.filter((p) => p !== id) : [...prev, id]
     );
+  };
+
+  const getQuantity = (id: string) => quantities[id] || 1;
+
+  const setQuantity = (id: string, value: number) => {
+    if (value < 1) return;
+    setQuantities((prev) => ({ ...prev, [id]: value }));
   };
 
   const formatCep = (value: string) => {
@@ -38,17 +51,23 @@ export function QuoteSection() {
   };
 
   const sendWhatsApp = () => {
-    const productNames = selectedProducts
-      .map((id) => products.find((p) => p.id === id)?.label)
-      .join(", ");
+    const productLines = selectedProducts
+      .map((id) => {
+        const product = products.find((p) => p.id === id);
+        const qty = getQuantity(id);
+        return `• ${product?.label} — Qtd: ${qty}`;
+      })
+      .join("\n");
     const message = encodeURIComponent(
       `Olá! Gostaria de um orçamento para os seguintes produtos:\n\n` +
-      `📦 Produtos: ${productNames}\n` +
+      `${productLines}\n\n` +
       `📍 CEP: ${cep}\n\n` +
       `Podem me ajudar?`
     );
     window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${message}`, "_blank");
   };
+
+  const totalSteps = 3;
 
   return (
     <section id="orcamento" className="section-padding bg-background">
@@ -70,18 +89,22 @@ export function QuoteSection() {
         {/* Progress */}
         <ScrollReveal delay={100}>
           <div className="flex items-center justify-center gap-4 mb-10">
-            <div className={`flex items-center justify-center w-10 h-10 rounded-full font-display text-lg transition-colors ${step >= 1 ? "bg-primary text-primary-foreground" : "bg-muted text-muted-foreground"}`}>
-              {step > 1 ? <Check className="w-5 h-5" /> : "1"}
-            </div>
-            <div className={`h-1 w-16 rounded-full transition-colors ${step >= 2 ? "bg-primary" : "bg-muted"}`} />
-            <div className={`flex items-center justify-center w-10 h-10 rounded-full font-display text-lg transition-colors ${step >= 2 ? "bg-primary text-primary-foreground" : "bg-muted text-muted-foreground"}`}>
-              2
-            </div>
+            {[1, 2, 3].map((s, i) => (
+              <div key={s} className="flex items-center gap-4">
+                <div className={`flex items-center justify-center w-10 h-10 rounded-full font-display text-lg transition-colors ${step >= s ? "bg-primary text-primary-foreground" : "bg-muted text-muted-foreground"}`}>
+                  {step > s ? <Check className="w-5 h-5" /> : s}
+                </div>
+                {i < 2 && (
+                  <div className={`h-1 w-12 rounded-full transition-colors ${step > s ? "bg-primary" : "bg-muted"}`} />
+                )}
+              </div>
+            ))}
           </div>
         </ScrollReveal>
 
         <ScrollReveal delay={200}>
           <div className="bg-card border border-border rounded-3xl p-6 md:p-10 shadow-lg">
+            {/* Step 1: Product Selection */}
             {step === 1 && (
               <div>
                 <h3 className="font-display text-2xl text-foreground mb-2 tracking-wide">
@@ -90,7 +113,7 @@ export function QuoteSection() {
                 <p className="text-muted-foreground text-sm mb-6">
                   Selecione um ou mais produtos para o orçamento.
                 </p>
-                <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
                   {products.map((product) => {
                     const isSelected = selectedProducts.includes(product.id);
                     return (
@@ -103,7 +126,6 @@ export function QuoteSection() {
                             : "border-border bg-secondary/30 hover:border-primary/50 hover:bg-secondary/60"
                           }`}
                       >
-                        <span className="text-3xl">{product.emoji}</span>
                         <span className={`font-medium text-sm ${isSelected ? "text-primary" : "text-foreground"}`}>
                           {product.label}
                         </span>
@@ -127,7 +149,74 @@ export function QuoteSection() {
               </div>
             )}
 
+            {/* Step 2: Quantities */}
             {step === 2 && (
+              <div>
+                <h3 className="font-display text-2xl text-foreground mb-2 tracking-wide">
+                  DEFINA AS QUANTIDADES
+                </h3>
+                <p className="text-muted-foreground text-sm mb-6">
+                  Informe a quantidade desejada para cada produto.
+                </p>
+                <div className="flex flex-col gap-3">
+                  {selectedProducts.map((id) => {
+                    const product = products.find((p) => p.id === id);
+                    const qty = getQuantity(id);
+                    return (
+                      <div
+                        key={id}
+                        className="flex items-center justify-between p-4 rounded-2xl border border-border bg-secondary/30"
+                      >
+                        <span className="font-medium text-foreground text-sm md:text-base">
+                          {product?.label}
+                        </span>
+                        <div className="flex items-center gap-3">
+                          <button
+                            onClick={() => setQuantity(id, qty - 1)}
+                            className="w-8 h-8 flex items-center justify-center rounded-full border border-border bg-background text-foreground hover:bg-secondary transition-colors"
+                          >
+                            <Minus className="w-4 h-4" />
+                          </button>
+                          <Input
+                            type="number"
+                            min={1}
+                            value={qty}
+                            onChange={(e) => setQuantity(id, parseInt(e.target.value) || 1)}
+                            className="w-16 text-center p-1 rounded-xl [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+                          />
+                          <button
+                            onClick={() => setQuantity(id, qty + 1)}
+                            className="w-8 h-8 flex items-center justify-center rounded-full border border-border bg-background text-foreground hover:bg-secondary transition-colors"
+                          >
+                            <Plus className="w-4 h-4" />
+                          </button>
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+                <div className="flex justify-between mt-8">
+                  <Button
+                    variant="outline"
+                    onClick={() => setStep(1)}
+                    className="font-semibold px-6 py-3 rounded-2xl"
+                  >
+                    <ArrowLeft className="w-4 h-4 mr-2" />
+                    Voltar
+                  </Button>
+                  <Button
+                    onClick={() => setStep(3)}
+                    className="gradient-bg text-primary-foreground font-semibold px-6 py-3 rounded-2xl hover:opacity-90 transition-all group"
+                  >
+                    Próximo
+                    <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                  </Button>
+                </div>
+              </div>
+            )}
+
+            {/* Step 3: CEP */}
+            {step === 3 && (
               <div>
                 <h3 className="font-display text-2xl text-foreground mb-2 tracking-wide">
                   INFORME SEU CEP
@@ -141,9 +230,10 @@ export function QuoteSection() {
                   <div className="flex flex-wrap gap-2 mb-6">
                     {selectedProducts.map((id) => {
                       const product = products.find((p) => p.id === id);
+                      const qty = getQuantity(id);
                       return (
                         <span key={id} className="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium">
-                          {product?.emoji} {product?.label}
+                          {product?.label} (x{qty})
                         </span>
                       );
                     })}
@@ -162,7 +252,7 @@ export function QuoteSection() {
                 <div className="flex justify-between">
                   <Button
                     variant="outline"
-                    onClick={() => setStep(1)}
+                    onClick={() => setStep(2)}
                     className="font-semibold px-6 py-3 rounded-2xl"
                   >
                     <ArrowLeft className="w-4 h-4 mr-2" />
