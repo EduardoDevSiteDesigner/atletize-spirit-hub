@@ -9,6 +9,7 @@ const navItems = [
   { label: "Como Funciona", href: "#como-funciona" },
   { label: "Dúvidas", href: "#faq" },
   { label: "Contato", href: "#contato" },
+  { label: "Site", href: "https://artearena.com.br", external: true },
 ];
 
 export function Header() {
