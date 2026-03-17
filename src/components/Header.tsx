@@ -38,15 +38,27 @@ export function Header() {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-8">
-            {navItems.map((item) => (
-              <button
-                key={item.label}
-                onClick={() => scrollToSection(item.href)}
-                className="text-foreground/80 hover:text-primary transition-colors font-medium text-sm tracking-wide"
-              >
-                {item.label}
-              </button>
-            ))}
+            {navItems.map((item) =>
+              item.external ? (
+                <a
+                  key={item.label}
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-foreground/80 hover:text-primary transition-colors font-medium text-sm tracking-wide"
+                >
+                  {item.label}
+                </a>
+              ) : (
+                <button
+                  key={item.label}
+                  onClick={() => scrollToSection(item.href)}
+                  className="text-foreground/80 hover:text-primary transition-colors font-medium text-sm tracking-wide"
+                >
+                  {item.label}
+                </button>
+              )
+            )}
           </nav>
 
           {/* CTA Button */}
