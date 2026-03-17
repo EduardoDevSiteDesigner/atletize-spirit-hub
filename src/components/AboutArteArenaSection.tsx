@@ -5,9 +5,9 @@ import logoTotemSports from "@/assets/logo-totem-sports.jpg";
 import logoLojaTorcida from "@/assets/logo-loja-torcida.jpg";
 
 const groupBrands = [
-  { name: "BANDEIRA PERSONALIZADA", logo: logoBandeiraPersonalizada },
-  { name: "TOTEM SPORTS", logo: logoTotemSports },
-  { name: "LOJA DE TORCIDA", logo: logoLojaTorcida },
+  { name: "BANDEIRA PERSONALIZADA", logo: logoBandeiraPersonalizada, url: "https://bandeirapersonalizada.com.br" },
+  { name: "TOTEM SPORTS", logo: logoTotemSports, url: "https://www.totemsports.com.br" },
+  { name: "LOJA DE TORCIDA", logo: logoLojaTorcida, url: "https://www.lojadetorcida.com.br" },
 ];
 
 export function AboutArteArenaSection() {
@@ -65,9 +65,12 @@ export function AboutArteArenaSection() {
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
               {groupBrands.map((brand) => (
-                <div 
+                <a 
                   key={brand.name}
-                  className="bg-card rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow flex items-center justify-center"
+                  href={brand.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-card rounded-2xl p-6 shadow-lg hover:shadow-xl hover:scale-105 transition-all flex items-center justify-center cursor-pointer"
                 >
                   <img 
                     src={brand.logo} 
@@ -75,7 +78,7 @@ export function AboutArteArenaSection() {
                     loading="lazy"
                     className="w-full h-24 object-contain"
                   />
-                </div>
+                </a>
               ))}
             </div>
           </div>
