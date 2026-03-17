@@ -7,18 +7,18 @@ import { ArrowRight, ArrowLeft, Send, Check, Minus, Plus } from "lucide-react";
 const WHATSAPP_NUMBER = "5511934881548";
 
 const products = [
-  { id: "bandeira", label: "Bandeira" },
-  { id: "caneca", label: "Caneca de Alumínio" },
-  { id: "tirante", label: "Tirante" },
-  { id: "sacochila", label: "Sacochilas" },
-  { id: "cachecol", label: "Cachecol" },
-  { id: "faixa", label: "Faixas de Mão" },
-  { id: "uniforme", label: "Uniforme" },
-  { id: "shorts-doll", label: "Shorts Doll" },
-  { id: "flamula", label: "Flâmula" },
-  { id: "estandarte", label: "Estandarte" },
-  { id: "backdrop", label: "Backdrop" },
-  { id: "almofada", label: "Almofada" },
+  { id: "bandeira", label: "Bandeira", minQty: 1 },
+  { id: "caneca", label: "Caneca de Alumínio", minQty: 30 },
+  { id: "tirante", label: "Tirante", minQty: 20 },
+  { id: "sacochila", label: "Sacochilas", minQty: 10 },
+  { id: "cachecol", label: "Cachecol", minQty: 1 },
+  { id: "faixa", label: "Faixas de Mão", minQty: 10 },
+  { id: "uniforme", label: "Uniforme", minQty: 10 },
+  { id: "shorts-doll", label: "Shorts Doll", minQty: 10 },
+  { id: "flamula", label: "Flâmula", minQty: 1 },
+  { id: "estandarte", label: "Estandarte", minQty: 1 },
+  { id: "backdrop", label: "Backdrop", minQty: 1 },
+  { id: "almofada", label: "Almofada", minQty: 1 },
 ];
 
 const categories = [
