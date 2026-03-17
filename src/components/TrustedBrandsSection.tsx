@@ -50,6 +50,7 @@ function BrandIcon({ src, alt, index }: BrandIconProps) {
         <img
           src={src}
           alt={alt}
+          loading="lazy"
           className="w-full h-full object-contain relative z-10 transition-transform duration-300 group-hover:scale-110"
         />
       </div>

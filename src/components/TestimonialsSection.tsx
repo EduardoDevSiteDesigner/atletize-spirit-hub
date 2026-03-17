@@ -106,12 +106,14 @@ export function TestimonialsSection() {
                     <img 
                       src={testimonial.image} 
                       alt={testimonial.name}
+                      loading="lazy"
                       className="w-10 h-10 rounded-full object-cover"
                     />
                   ) : testimonial.logo ? (
                     <img 
                       src={testimonial.logo} 
                       alt={testimonial.name}
+                      loading="lazy"
                       className="w-10 h-10 rounded-full object-contain bg-muted p-1"
                     />
                   ) : (

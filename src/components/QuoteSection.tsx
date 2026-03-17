@@ -7,18 +7,18 @@ import { ArrowRight, ArrowLeft, Send, Check, Minus, Plus } from "lucide-react";
 const WHATSAPP_NUMBER = "5511934881548";
 
 const products = [
-  { id: "bandeira", label: "Bandeira" },
-  { id: "caneca", label: "Caneca de Alumínio" },
-  { id: "tirante", label: "Tirante" },
-  { id: "sacochila", label: "Sacochilas" },
-  { id: "cachecol", label: "Cachecol" },
-  { id: "faixa", label: "Faixas de Mão" },
-  { id: "uniforme", label: "Uniforme" },
-  { id: "shorts-doll", label: "Shorts Doll" },
-  { id: "flamula", label: "Flâmula" },
-  { id: "estandarte", label: "Estandarte" },
-  { id: "backdrop", label: "Backdrop" },
-  { id: "almofada", label: "Almofada" },
+  { id: "bandeira", label: "Bandeira", minQty: 1 },
+  { id: "caneca", label: "Caneca de Alumínio", minQty: 30 },
+  { id: "tirante", label: "Tirante", minQty: 20 },
+  { id: "sacochila", label: "Sacochilas", minQty: 10 },
+  { id: "cachecol", label: "Cachecol", minQty: 1 },
+  { id: "faixa", label: "Faixas de Mão", minQty: 10 },
+  { id: "uniforme", label: "Uniforme", minQty: 10 },
+  { id: "shorts-doll", label: "Shorts Doll", minQty: 10 },
+  { id: "flamula", label: "Flâmula", minQty: 1 },
+  { id: "estandarte", label: "Estandarte", minQty: 1 },
+  { id: "backdrop", label: "Backdrop", minQty: 1 },
+  { id: "almofada", label: "Almofada", minQty: 1 },
 ];
 
 const categories = [
@@ -47,10 +47,12 @@ export function QuoteSection() {
     );
   };
 
-  const getQuantity = (id: string) => quantities[id] || 1;
+  const getMinQty = (id: string) => products.find((p) => p.id === id)?.minQty || 1;
+  const getQuantity = (id: string) => quantities[id] || getMinQty(id);
 
   const setQuantity = (id: string, value: number) => {
-    if (value < 1) return;
+    const min = getMinQty(id);
+    if (value < min) return;
     setQuantities((prev) => ({ ...prev, [id]: value }));
   };
 
@@ -197,9 +199,12 @@ export function QuoteSection() {
                           </button>
                           <Input
                             type="number"
-                            min={1}
+                            min={getMinQty(id)}
                             value={qty}
-                            onChange={(e) => setQuantity(id, parseInt(e.target.value) || 1)}
+                            onChange={(e) => {
+                              const val = parseInt(e.target.value) || getMinQty(id);
+                              setQuantity(id, Math.max(val, getMinQty(id)));
+                            }}
                             className="w-16 text-center p-1 rounded-xl [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
                           />
                           <button
@@ -209,6 +214,11 @@ export function QuoteSection() {
                             <Plus className="w-4 h-4" />
                           </button>
                         </div>
+                        {getMinQty(id) > 1 && (
+                          <span className="text-xs text-muted-foreground mt-1">
+                            Mín: {getMinQty(id)} un.
+                          </span>
+                        )}
                       </div>
                     );
                   })}
