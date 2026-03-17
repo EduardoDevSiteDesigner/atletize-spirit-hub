@@ -8,28 +8,32 @@ import { ScrollReveal } from "./ScrollReveal";
 
 const faqs = [
   {
-    question: "Tem pedido mínimo?",
-    answer: "Sim, cada produto tem sua quantidade mínima. Por exemplo, canecas de alumínio têm mínimo de 20 unidades. Entre em contato para saber mais sobre quantidades específicas de cada produto."
+    question: "Quais tecidos são usados nas bandeiras das atléticas?",
+    answer: "Podemos fabricar em Tactel, Tactel 4 cabos, Bember ou Cetim, dependendo do brilho e da resistência que sua atlética busca para os jogos."
   },
   {
-    question: "E qual a média de tempo para entregar?",
-    answer: "O prazo médio de produção é de 10 dias úteis após pagamento e aprovação da arte. Após o envio, o prazo de entrega depende da transportadora escolhida e da localização."
+    question: "Qual o prazo de entrega para os pedidos da faculdade?",
+    answer: "Nosso prazo é de 10 dias úteis, ideal para planejar o fardamento e os acessórios antes do início dos campeonatos ou festas."
   },
   {
-    question: "Tenho uma ideia, mas não tenho a arte ainda, vocês produzem esboços?",
-    answer: "Sim! Nossa equipe de design pode ajudar você a criar o esboço e desenvolver a arte para seu produto personalizado."
+    question: "A Arte Arena envia para atléticas de todo o país?",
+    answer: "Sim, nosso envio cobre todo o território nacional, levando o branding da sua atlética para qualquer competição."
   },
   {
-    question: "Tem uma cor muito específica que eu não sei o nome, como proceder?",
-    answer: "Não se preocupe! Você pode nos enviar uma referência visual ou código de cor (se tiver) que nossa equipe ajudará a identificar e reproduzir a cor desejada."
+    question: "Não temos um designer, vocês ajudam com o esboço?",
+    answer: "Sim! Ajudamos a criar uma presença visual que gere credibilidade e orgulho entre os alunos, transformando seus rascunhos em produtos profissionais."
   },
   {
-    question: "Vocês trabalham com outros tecidos na confecção das bandeiras?",
-    answer: "Trabalhamos principalmente com Poliéster Microfibra, que oferece excelente qualidade de impressão e durabilidade. Para outras opções, consulte nossa equipe."
+    question: "Além de uniformes e bandeiras, o que mais vocês fazem?",
+    answer: "Produzimos mais de 50 produtos diferentes. Sua atlética pode personalizar desde canecas e tirantes até sacochilas e windbanners, consolidando a imagem da marca em todos os eventos."
   },
   {
-    question: "O frete está incluso no preço?",
-    answer: "Não, o frete é calculado separadamente conforme a localização de entrega e as dimensões do pedido. Solicite um orçamento para saber o valor total."
+    question: "Quais as formas de pagamento para a minha atlética?",
+    answer: "Para facilitar a organização financeira da gestão, aceitamos PIX, Boleto à vista, Cartão de Débito, Transferência ou Cartão de Crédito parcelado em até 12x."
+  },
+  {
+    question: "Trabalham com prazos de confecção de urgência?",
+    answer: "Trabalhamos sim! Possuímos uma estrutura preparada para priorizar a confecção do seu pedido internamente. Mediante negociação de valores e alinhamento das formas de envio, garantimos o tratamento prioritário que sua demanda exige. Entre em contato com nossa equipe comercial para consultar as condições de urgência."
   }
 ];
 

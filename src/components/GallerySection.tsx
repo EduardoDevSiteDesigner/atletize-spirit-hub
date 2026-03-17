@@ -1,11 +1,4 @@
 import { ScrollReveal } from "./ScrollReveal";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
 
 const galleryImages = [
   { src: "/galeria/bandeira-insano.png", alt: "Bandeira Insano AAATI UP" },
@@ -39,37 +32,23 @@ export function GallerySection() {
           </div>
         </ScrollReveal>
 
-        {/* Carousel */}
+        {/* Two Column Grid */}
         <ScrollReveal delay={200}>
-          <div className="px-12">
-            <Carousel
-              opts={{
-                align: "start",
-                loop: true,
-              }}
-              className="w-full"
-            >
-              <CarouselContent className="-ml-4">
-                {galleryImages.map((image, index) => (
-                  <CarouselItem key={index} className="pl-4 md:basis-1/2 lg:basis-1/3">
-                    <div className="relative overflow-hidden rounded-2xl bg-secondary/30 aspect-square group">
-                      <img
-                        src={image.src}
-                        alt={image.alt}
-                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <div className="absolute bottom-4 left-4 right-4">
-                          <p className="text-white font-medium text-sm">{image.alt}</p>
-                        </div>
-                      </div>
-                    </div>
-                  </CarouselItem>
-                ))}
-              </CarouselContent>
-              <CarouselPrevious className="bg-primary text-primary-foreground hover:bg-primary/90 border-none -left-4" />
-              <CarouselNext className="bg-primary text-primary-foreground hover:bg-primary/90 border-none -right-4" />
-            </Carousel>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+            {galleryImages.map((image, index) => (
+              <div key={index} className="relative overflow-hidden rounded-2xl bg-secondary/30 aspect-square group">
+                <img
+                  src={image.src}
+                  alt={image.alt}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="absolute bottom-4 left-4 right-4">
+                    <p className="text-white font-medium text-sm">{image.alt}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
         </ScrollReveal>
       </div>
