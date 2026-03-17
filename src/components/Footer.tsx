@@ -34,15 +34,17 @@ export function Footer() {
             </nav>
           </div>
 
-          {/* Center - Links Úteis & Social */}
-          <div className="flex flex-col items-center md:items-start md:mx-auto gap-4">
+          {/* Right - Links Úteis & Social */}
+          <div className="flex flex-col items-center md:items-start gap-4">
             <h4 className="text-white font-display text-sm uppercase tracking-wider">Links Úteis</h4>
             <nav className="flex flex-col items-center md:items-start gap-2 text-white/80 text-sm">
               <a href="#sobre" className="hover:text-white transition-colors">Quem somos</a>
+              <a href="#" className="hover:text-white transition-colors">Visite nosso BLOG</a>
               <a href="#" className="hover:text-white transition-colors">Política de Privacidade</a>
               <a href="#" className="hover:text-white transition-colors">Termos de Uso</a>
               <a href="#" className="hover:text-white transition-colors">Trocas e Devoluções</a>
               <a href="#contato" className="hover:text-white transition-colors">Trabalhe Conosco</a>
+              <a href="#" className="hover:text-white transition-colors">Simulador de Uniformes</a>
             </nav>
             <div className="flex gap-3 mt-2">
               {socialLinks.map((link) => (
