@@ -26,45 +26,47 @@ export function Footer() {
   return (
     <footer className="gradient-bg py-12">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
-          {/* Left - Logo & Description */}
-          <div className="flex flex-col items-center md:items-start gap-3">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+          {/* Left - Logo, Description & Nav Links */}
+          <div className="flex flex-col items-center md:items-start gap-4">
             <img 
               src={logoFooter} 
               alt="ATLETIZE" 
               className="h-14 w-auto"
             />
-            <p className="text-white/90 text-sm">
+            <p className="text-white/90 text-sm font-medium">
               Uma marca Arte Arena
             </p>
-            <p className="text-white/60 text-xs leading-relaxed md:text-left text-center">
-              A Arte Arena é sua parceira ideal na criação de materiais personalizados que refletem a identidade única de cada cliente.
+            <p className="text-white/60 text-sm leading-relaxed md:text-left text-center max-w-md">
+              A Arte Arena é sua parceira ideal na criação de materiais personalizados que refletem a identidade única de cada cliente. Desde nossa fundação, nos dedicamos a oferecer produtos de alta qualidade, combinando criatividade, inovação e um compromisso inabalável com a satisfação do cliente.
             </p>
-          </div>
-
-          {/* Center - Links */}
-          <div className="flex flex-col items-center gap-3">
-            <h4 className="text-white font-semibold text-sm uppercase tracking-wider">Navegação</h4>
-            <nav className="flex flex-col items-center gap-2 text-white/80 text-sm">
+            <nav className="flex flex-wrap gap-x-6 gap-y-2 text-white/80 text-sm mt-2">
+              <a href="#" className="hover:text-white transition-colors">Início</a>
               <a href="#produtos" className="hover:text-white transition-colors">Produtos</a>
-              <a href="#galeria" className="hover:text-white transition-colors">Portfólio</a>
               <a href="#como-funciona" className="hover:text-white transition-colors">Como Funciona</a>
               <a href="#faq" className="hover:text-white transition-colors">Dúvidas</a>
               <a href="#contato" className="hover:text-white transition-colors">Contato</a>
             </nav>
           </div>
 
-          {/* Right - Social & Contact */}
-          <div className="flex flex-col items-center md:items-end gap-3">
-            <h4 className="text-white font-semibold text-sm uppercase tracking-wider">Redes Sociais</h4>
-            <div className="flex gap-3">
+          {/* Right - Links Úteis & Social */}
+          <div className="flex flex-col items-center md:items-end gap-4">
+            <h4 className="text-white font-display text-sm uppercase tracking-wider">Links Úteis</h4>
+            <nav className="flex flex-col items-center md:items-end gap-2 text-white/80 text-sm">
+              <a href="#sobre" className="hover:text-white transition-colors">Quem somos</a>
+              <a href="#" className="hover:text-white transition-colors">Política de Privacidade</a>
+              <a href="#" className="hover:text-white transition-colors">Termos de Uso</a>
+              <a href="#" className="hover:text-white transition-colors">Trocas e Devoluções</a>
+              <a href="#contato" className="hover:text-white transition-colors">Trabalhe Conosco</a>
+            </nav>
+            <div className="flex gap-3 mt-2">
               {socialLinks.map((link) => (
                 <a
                   key={link.label}
                   href={link.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-9 h-9 rounded-lg bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors"
+                  className="w-10 h-10 rounded-full border border-white/30 flex items-center justify-center hover:bg-white/10 transition-colors"
                   aria-label={link.label}
                 >
                   {link.icon}
@@ -80,7 +82,6 @@ export function Footer() {
         {/* Copyright */}
         <div className="text-center text-white/60 text-xs">
           <p>© {new Date().getFullYear()} ATLETIZE. Todos os direitos reservados.</p>
-          <p className="mt-1">Seus dados estão protegidos conosco.</p>
         </div>
       </div>
     </footer>
