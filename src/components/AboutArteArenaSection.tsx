@@ -50,6 +50,7 @@ export function AboutArteArenaSection() {
               <img 
                 src={logoArteArena} 
                 alt="Arte Arena" 
+                loading="lazy"
                 className="w-48 md:w-64 lg:w-72 h-auto"
               />
             </div>
