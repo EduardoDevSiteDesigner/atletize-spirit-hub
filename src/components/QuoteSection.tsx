@@ -113,24 +113,24 @@ export function QuoteSection() {
                 <p className="text-muted-foreground text-sm mb-6">
                   Selecione um ou mais produtos para o orçamento.
                 </p>
-                <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
                   {products.map((product) => {
                     const isSelected = selectedProducts.includes(product.id);
                     return (
                       <button
                         key={product.id}
                         onClick={() => toggleProduct(product.id)}
-                        className={`flex flex-col items-center gap-2 p-4 rounded-2xl border-2 transition-all text-center
+                        className={`flex items-center justify-center min-h-[72px] px-4 py-5 rounded-2xl border-2 transition-all text-center relative
                           ${isSelected
                             ? "border-primary bg-primary/10 shadow-md scale-[1.02]"
                             : "border-border bg-secondary/30 hover:border-primary/50 hover:bg-secondary/60"
                           }`}
                       >
-                        <span className={`font-medium text-sm text-center ${isSelected ? "text-primary" : "text-foreground"}`}>
+                        <span className={`font-semibold text-base text-center leading-tight ${isSelected ? "text-primary" : "text-foreground"}`}>
                           {product.label}
                         </span>
                         {isSelected && (
-                          <Check className="w-4 h-4 text-primary" />
+                          <Check className="w-4 h-4 text-primary absolute top-2 right-2" />
                         )}
                       </button>
                     );
